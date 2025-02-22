@@ -16,11 +16,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { toast } from "sonner";
-import { CreditCard, Landmark, Phone } from "lucide-react";
+import { CreditCard, Landmark, Phone, Copy } from "lucide-react";
+import { useState } from "react";
 
 const formSchema = z.object({
   amount: z.string().min(1, "Amount is required"),
@@ -28,7 +36,30 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
 });
 
+const paymentDetails = {
+  orange: {
+    title: "Orange Money Payment Details",
+    number: "+237 678 901 234",
+    instructions: "Send payment to this Orange Money number and include your email in the transaction message.",
+  },
+  mtn: {
+    title: "MTN MoMo Payment Details",
+    number: "+237 677 889 900",
+    instructions: "Transfer the amount to this MTN Mobile Money number and include your email as reference.",
+  },
+  bank: {
+    title: "Bank Transfer Details",
+    accountName: "CLS Ventures Ltd",
+    accountNumber: "0123456789",
+    bankName: "EcoBank Cameroon",
+    swiftCode: "ECOCCMCX",
+    instructions: "Please include your email as payment reference.",
+  },
+};
+
 const DonationForm = () => {
+  const [selectedMethod, setSelectedMethod] = useState<string>("");
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,10 +69,107 @@ const DonationForm = () => {
     },
   });
 
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Copied to clipboard!");
+  };
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
-    toast.success("Thank you for your donation!");
-    form.reset();
+    if (values.paymentMethod === "paypal") {
+      // Redirect to PayPal (in real implementation)
+      toast.success("Redirecting to PayPal...");
+    } else {
+      toast.success("Please complete your payment using the provided details.");
+    }
+  };
+
+  const renderPaymentDetails = () => {
+    if (!selectedMethod || selectedMethod === "paypal") return null;
+
+    const details = paymentDetails[selectedMethod as keyof typeof paymentDetails];
+    
+    return (
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>{details.title}</CardTitle>
+          <CardDescription>Follow these instructions to complete your payment</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {selectedMethod === "bank" ? (
+            <>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">Bank Name:</p>
+                  <p>{details.bankName}</p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => copyToClipboard(details.bankName)}
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">Account Name:</p>
+                  <p>{details.accountName}</p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => copyToClipboard(details.accountName)}
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">Account Number:</p>
+                  <p>{details.accountNumber}</p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => copyToClipboard(details.accountNumber)}
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">Swift Code:</p>
+                  <p>{details.swiftCode}</p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => copyToClipboard(details.swiftCode)}
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              </div>
+            </>
+          ) : (
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="font-semibold">Payment Number:</p>
+                <p>{details.number}</p>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => copyToClipboard(details.number)}
+              >
+                <Copy className="h-4 w-4" />
+              </Button>
+            </div>
+          )}
+          <p className="text-sm text-muted-foreground mt-4">{details.instructions}</p>
+        </CardContent>
+      </Card>
+    );
   };
 
   return (
@@ -81,7 +209,13 @@ const DonationForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Payment Method</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select 
+                onValueChange={(value) => {
+                  field.onChange(value);
+                  setSelectedMethod(value);
+                }} 
+                defaultValue={field.value}
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Select payment method" />
@@ -119,7 +253,11 @@ const DonationForm = () => {
           )}
         />
 
-        <Button type="submit" className="w-full">Process Donation</Button>
+        {renderPaymentDetails()}
+
+        <Button type="submit" className="w-full">
+          {selectedMethod === "paypal" ? "Proceed to PayPal" : "Generate Payment Details"}
+        </Button>
       </form>
     </Form>
   );

@@ -2,6 +2,15 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Mail, Heart } from "lucide-react";
 import { Button } from "./ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import DonationForm from "./DonationForm";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -106,13 +115,25 @@ const Footer = () => {
 
         {/* Donation button */}
         <div className="border-t border-gray-200 mt-12 pt-8 text-center">
-          <Button
-            size="lg"
-            className="bg-accent hover:bg-accent-dark text-white font-semibold"
-            onClick={() => window.location.href = '/donate'}
-          >
-            <Heart className="mr-2" /> Support Our Mission
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent-dark text-white font-semibold"
+              >
+                <Heart className="mr-2" /> Support Our Mission
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle>Support Our Mission</DialogTitle>
+                <DialogDescription>
+                  Your donation helps us create a more sustainable future.
+                </DialogDescription>
+              </DialogHeader>
+              <DonationForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
 
