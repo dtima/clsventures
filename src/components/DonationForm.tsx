@@ -20,7 +20,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { toast } from "sonner";
-import { CreditCard, Paypal, Landmark, Phone } from "lucide-react";
+import { CreditCard, Landmark, Phone } from "lucide-react";
 
 const formSchema = z.object({
   amount: z.string().min(1, "Amount is required"),
@@ -90,7 +90,7 @@ const DonationForm = () => {
                 <SelectContent>
                   <SelectItem value="paypal">
                     <div className="flex items-center gap-2">
-                      <Paypal className="h-4 w-4" />
+                      <CreditCard className="h-4 w-4" />
                       PayPal
                     </div>
                   </SelectItem>
