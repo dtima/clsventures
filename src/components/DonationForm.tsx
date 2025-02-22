@@ -36,18 +36,44 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
 });
 
-const paymentDetails = {
+interface MobileMoneyDetails {
+  type: "mobile";
+  title: string;
+  number: string;
+  instructions: string;
+}
+
+interface BankDetails {
+  type: "bank";
+  title: string;
+  accountName: string;
+  accountNumber: string;
+  bankName: string;
+  swiftCode: string;
+  instructions: string;
+}
+
+type PaymentDetails = {
+  orange: MobileMoneyDetails;
+  mtn: MobileMoneyDetails;
+  bank: BankDetails;
+};
+
+const paymentDetails: PaymentDetails = {
   orange: {
+    type: "mobile",
     title: "Orange Money Payment Details",
     number: "+237 678 901 234",
     instructions: "Send payment to this Orange Money number and include your email in the transaction message.",
   },
   mtn: {
+    type: "mobile",
     title: "MTN MoMo Payment Details",
     number: "+237 677 889 900",
     instructions: "Transfer the amount to this MTN Mobile Money number and include your email as reference.",
   },
   bank: {
+    type: "bank",
     title: "Bank Transfer Details",
     accountName: "CLS Ventures Ltd",
     accountNumber: "0123456789",
@@ -87,7 +113,7 @@ const DonationForm = () => {
   const renderPaymentDetails = () => {
     if (!selectedMethod || selectedMethod === "paypal") return null;
 
-    const details = paymentDetails[selectedMethod as keyof typeof paymentDetails];
+    const details = paymentDetails[selectedMethod as keyof PaymentDetails];
     
     return (
       <Card className="mt-6">
@@ -96,7 +122,7 @@ const DonationForm = () => {
           <CardDescription>Follow these instructions to complete your payment</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {selectedMethod === "bank" ? (
+          {details.type === "bank" ? (
             <>
               <div className="flex justify-between items-center">
                 <div>
