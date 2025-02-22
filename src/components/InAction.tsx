@@ -10,20 +10,55 @@ import {
 const InAction = () => {
   const photos = [
     {
-      src: "/photo-1605810230434-7631ac76ec81",
-      title: "Community Workshop",
-      description: "Engaging with local partners in sustainable practices",
+      src: "/lovable-uploads/d68e613d-badf-4542-9207-bc988769f3d4.png",
+      title: "Abu Dhabi Global Healthcare Week",
+      description: "Representing Africa's innovations in sustainable healthcare solutions",
     },
     {
-      src: "/photo-1519389950473-47ba0277781c",
-      title: "Team Collaboration",
-      description: "Our team working on innovative solutions",
+      src: "/lovable-uploads/f265f1a2-2aca-44eb-a16e-60f8afaa482a.png",
+      title: "Young African Entrepreneurs Forum",
+      description: "Empowering the next generation of sustainable business leaders",
     },
     {
-      src: "/photo-1487058792275-0ad4aaf24ca7",
-      title: "Technology Integration",
-      description: "Using advanced tech for waste transformation",
+      src: "/lovable-uploads/da426eb6-917e-410c-818f-768c2bd4764f.png",
+      title: "Tokyo International Conference",
+      description: "Showcasing African development initiatives at TICAD",
     },
+    {
+      src: "/lovable-uploads/d8e35f09-5f16-412b-93de-431f0c828534.png",
+      title: "Africa Youth Conference",
+      description: "Leading discussions on sustainable development at the UN",
+    },
+    {
+      src: "/lovable-uploads/6599bfcd-7abb-44df-9efb-80d0dfbf5a68.png",
+      title: "Women Empowerment Initiative",
+      description: "Training and empowering women in bio-waste transformation",
+    },
+    {
+      src: "/lovable-uploads/700be661-6a26-4658-a58e-a6859361d9c6.png",
+      title: "TICAD Panel Discussion",
+      description: "Participating in key policy discussions on African development",
+    },
+    {
+      src: "/lovable-uploads/35fd8d64-18ab-46a7-8748-cf59764f8175.png",
+      title: "Waste Management Innovation",
+      description: "Showcasing our recycling and transformation processes",
+    },
+    {
+      src: "/lovable-uploads/8e215b53-abf4-43c7-b1e0-11d12b716bed.png",
+      title: "Circular Economy Summit",
+      description: "Building partnerships for sustainable waste management",
+    },
+    {
+      src: "/lovable-uploads/f786af66-13c4-4ab1-84af-119d0ecbbf0a.png",
+      title: "Community Engagement",
+      description: "Working with local leaders and stakeholders",
+    },
+    {
+      src: "/lovable-uploads/11063dd6-c2b0-4871-aa09-9d52b025df0a.png",
+      title: "Product Demonstration",
+      description: "Presenting our innovative solutions to industry leaders",
+    }
   ];
 
   return (
@@ -34,8 +69,7 @@ const InAction = () => {
             In Action
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            See how we're making a difference through our activities and events
-            across communities.
+            Witness our impact through global conferences, community initiatives, and sustainable development programs across Africa and beyond.
           </p>
         </div>
 
