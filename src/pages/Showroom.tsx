@@ -7,34 +7,34 @@ import { ArrowRight, CalendarDays, MapPin, Info } from "lucide-react";
 const Showroom = () => {
   const locations = [
     {
-      city: "San Francisco",
-      address: "123 Eco Street, CA 94105",
-      hours: "Mon-Fri: 9AM-6PM",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+      city: "Yaoundé",
+      address: "Mimboman château, Yaoundé, Cameroon",
+      hours: "Mon-Fri: 9AM-6PM, Sat: 9AM-2PM",
+      image: "/lovable-uploads/36e1a494-dd8a-4d84-b16b-851ed339123f.png",
     },
     {
-      city: "Los Angeles",
-      address: "456 Green Ave, CA 90012",
-      hours: "Mon-Sat: 10AM-7PM",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
+      city: "Aalen",
+      address: "Primelweg 1, 73433 Aalen, Deutschland",
+      hours: "Mon-Fri: 10AM-7PM, Sat: 10AM-4PM",
+      image: "/lovable-uploads/3a71af9e-5ec7-415b-8bf7-b5f73ba1b645.png",
     },
   ];
 
   const featuredProducts = [
     {
-      name: "Recycled Tire Planter",
-      description: "Beautiful planters made from recycled tires.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      name: "Eco-Chic Tire Chairs",
+      description: "Stylish chairs crafted from recycled tires with colorful rope designs.",
+      image: "/lovable-uploads/86010ae7-7b47-453c-b8c0-24898b77884f.png",
     },
     {
-      name: "Textile Art Pieces",
-      description: "Unique wall art created from repurposed textiles.",
-      image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
+      name: "Woven Tire Ottoman",
+      description: "Contemporary ottomans made from recycled materials with elegant woven patterns.",
+      image: "/lovable-uploads/8b3b574f-8701-4131-ad5c-e09e8cf30c5d.png",
     },
     {
-      name: "Eco-Friendly Furniture",
-      description: "Sustainable furniture from reclaimed materials.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      name: "Artisan Tire Seating",
+      description: "Unique seating solutions combining recycled tires with traditional craftsmanship.",
+      image: "/lovable-uploads/24dec0ed-f9fc-458d-8372-13b2586391ca.png",
     },
   ];
 
@@ -50,8 +50,8 @@ const Showroom = () => {
               Visit Our Showroom
             </h1>
             <p className="text-xl text-gray-600">
-              Experience our sustainable products in person and discover how waste materials 
-              can be transformed into beautiful, functional items.
+              Experience our innovative furniture collection in person and discover how we transform waste 
+              materials into beautiful, functional pieces for your space.
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@ const Showroom = () => {
               Book a Visit
             </h2>
             <p className="text-gray-600 mb-8">
-              Schedule a guided tour of our showroom and learn more about our sustainable products.
+              Schedule a guided tour of our showroom and learn more about our sustainable furniture collection.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
