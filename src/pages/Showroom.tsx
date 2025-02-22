@@ -1,8 +1,8 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CalendarDays, MapPin, Info } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Showroom = () => {
   const locations = [
@@ -10,7 +10,7 @@ const Showroom = () => {
       city: "Yaoundé",
       address: "Mimboman château, Yaoundé, Cameroon",
       hours: "Mon-Fri: 9AM-6PM, Sat: 9AM-2PM",
-      image: "/lovable-uploads/36e1a494-dd8a-4d84-b16b-851ed339123f.png",
+      image: "/lovable-uploads/121ac237-a7e8-4f01-84f0-d398f6ec17a6.png",
     },
     {
       city: "Aalen",
@@ -40,6 +40,10 @@ const Showroom = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Visit Our Showroom"
+        description="Experience our innovative sustainable furniture collection in person at our showrooms in Yaoundé and Aalen. Discover how we transform waste materials into beautiful, functional pieces."
+      />
       <Navbar />
       
       {/* Hero Section */}

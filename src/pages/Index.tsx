@@ -8,10 +8,15 @@ import CTA from "@/components/CTA";
 import InAction from "@/components/InAction";
 import Clients from "@/components/Clients";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Sustainable Solutions for a Better Future"
+        description="CLS Ventures transforms waste materials into valuable products, leading the revolution towards a zero-waste society through innovative recycling solutions in Africa and Europe."
+      />
       <Navbar />
       <Hero />
       <Features />
