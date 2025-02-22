@@ -58,6 +58,31 @@ const InAction = () => {
       src: "/lovable-uploads/11063dd6-c2b0-4871-aa09-9d52b025df0a.png",
       title: "Product Demonstration",
       description: "Presenting our innovative solutions to industry leaders",
+    },
+    {
+      src: "/lovable-uploads/537fdd97-96f4-4feb-be73-acd5e0473bd2.png",
+      title: "Product Showcase Event",
+      description: "Demonstrating our eco-friendly furniture and sustainable solutions",
+    },
+    {
+      src: "/lovable-uploads/05501476-c009-46ad-ab5b-8141e2adfb92.png",
+      title: "Innovation Workshop",
+      description: "Exploring new designs in sustainable furniture production",
+    },
+    {
+      src: "/lovable-uploads/c7f4f1b1-7591-4fa3-8df0-b3734fe11a1f.png",
+      title: "International Partnership Meeting",
+      description: "Discussing global collaboration opportunities in sustainable development",
+    },
+    {
+      src: "/lovable-uploads/5559fa50-93f9-4d0f-94fb-9e73e8cdb377.png",
+      title: "Field Demonstration",
+      description: "Showcasing our products to international stakeholders",
+    },
+    {
+      src: "/lovable-uploads/2e395be8-f298-4675-a8c8-b53307b609f0.png",
+      title: "Product Development Session",
+      description: "Refining our sustainable furniture design process",
     }
   ];
 
