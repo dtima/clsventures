@@ -23,8 +23,8 @@ const Clients = () => {
     },
     {
       id: 5,
-      name: "Ambasciata d'Italia Yaoundé",
-      logo: "/lovable-uploads/fc4b269b-3198-4a13-ba8e-6de2ee4cc8c5.png"
+      name: "Tech Women",
+      logo: "/lovable-uploads/6e761360-5114-4f4b-ac8f-8df2372038a7.png"
     }
   ];
 
