@@ -5,6 +5,8 @@ import Features from "@/components/Features";
 import Impact from "@/components/Impact";
 import Process from "@/components/Process";
 import CTA from "@/components/CTA";
+import InAction from "@/components/InAction";
+import Clients from "@/components/Clients";
 
 const Index = () => {
   return (
@@ -13,8 +15,10 @@ const Index = () => {
       <Hero />
       <Features />
       <Process />
+      <InAction />
       <Impact />
       <CTA />
+      <Clients />
     </div>
   );
 };
