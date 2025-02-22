@@ -1,8 +1,48 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const About = () => {
+  const team = [
+    {
+      name: "Sarah Johnson",
+      title: "CEO & Co-founder",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      social: [
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
+        { icon: Twitter, href: "#", label: "Twitter" },
+      ],
+    },
+    {
+      name: "Michael Chen",
+      title: "CTO & Co-founder",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      social: [
+        { icon: Github, href: "#", label: "GitHub" },
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
+        { icon: Twitter, href: "#", label: "Twitter" },
+      ],
+    },
+    {
+      name: "Emma Thompson",
+      title: "Head of Sustainability",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      social: [
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
+        { icon: Twitter, href: "#", label: "Twitter" },
+      ],
+    },
+    {
+      name: "David Martinez",
+      title: "Operations Director",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      social: [
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
+        { icon: Twitter, href: "#", label: "Twitter" },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -77,6 +117,56 @@ const About = () => {
                   {value.title}
                 </h3>
                 <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary-dark mb-6">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Passionate individuals dedicated to transforming waste management and 
+              creating sustainable solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {team.map((member) => (
+              <div
+                key={member.name}
+                className="group bg-white rounded-xl p-6 text-center"
+              >
+                <div className="relative mb-6 aspect-square overflow-hidden rounded-xl">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-secondary-dark mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-gray-600 mb-4">{member.title}</p>
+                <div className="flex items-center justify-center space-x-3">
+                  {member.social.map((platform) => (
+                    <a
+                      key={platform.label}
+                      href={platform.href}
+                      className="text-gray-400 hover:text-primary transition-colors duration-200"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name}'s ${platform.label}`}
+                    >
+                      <platform.icon className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
