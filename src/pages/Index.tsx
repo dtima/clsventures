@@ -7,6 +7,7 @@ import Process from "@/components/Process";
 import CTA from "@/components/CTA";
 import InAction from "@/components/InAction";
 import Clients from "@/components/Clients";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
       <Impact />
       <CTA />
       <Clients />
+      <Footer />
     </div>
   );
 };
