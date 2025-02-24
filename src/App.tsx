@@ -18,6 +18,8 @@ import Cookies from "./pages/Cookies";
 import Blog from "./pages/Blog";
 import Partners from "./pages/Partners";
 import PressKit from "./pages/PressKit";
+import CustomOrders from "./pages/CustomOrders";
+import Careers from "./pages/Careers";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +43,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/press-kit" element={<PressKit />} />
+          <Route path="/custom-orders" element={<CustomOrders />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

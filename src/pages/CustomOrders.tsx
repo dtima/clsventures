@@ -26,7 +26,7 @@ const CustomOrders = () => {
       title: "Request Submitted",
       description: "We'll get back to you within 24 hours.",
     });
-    navigate("/thank-you");
+    setFormData({ name: "", email: "", phone: "", projectDescription: "", budget: "", timeline: "" });
   };
 
   return (
