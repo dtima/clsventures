@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Github, Linkedin, Twitter } from "lucide-react";
@@ -17,7 +18,7 @@ const About = () => {
     {
       name: "Edoa Nkodo Raphaël",
       title: "Chief Operation Officer",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+      image: "/lovable-uploads/2121428f-f16c-47f3-888c-7a28bbae186d.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
@@ -25,7 +26,7 @@ const About = () => {
     {
       name: "Andziah Martina Ayeah",
       title: "Communication Manager",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      image: "/lovable-uploads/c2f5f795-d306-441a-9d31-eb20753cfadb.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
         { icon: Twitter, href: "#", label: "Twitter" },
@@ -34,7 +35,7 @@ const About = () => {
     {
       name: "Maryam N. Bih",
       title: "Production Manager",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+      image: "/lovable-uploads/e5806995-46bd-41ff-81cb-3570287aa51a.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
@@ -42,7 +43,7 @@ const About = () => {
     {
       name: "Maimuna Mambo N.",
       title: "Production Executive",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+      image: "/lovable-uploads/f88e5f08-8e33-4ba9-ba7c-8cedb6148a21.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
@@ -58,7 +59,7 @@ const About = () => {
     {
       name: "Mairo Mama Epse Akenji",
       title: "Facilities Manager",
-      image: "/lovable-uploads/84f34935-927e-4f30-b64d-c5b7a42673f5.png",
+      image: "/lovable-uploads/bd2ad458-2b44-448c-bec1-d70e309f09d1.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
