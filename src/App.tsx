@@ -11,6 +11,13 @@ import Impact from "./pages/Impact";
 import GetInvolved from "./pages/GetInvolved";
 import Showroom from "./pages/Showroom";
 import Products from "./pages/Products";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Cookies from "./pages/Cookies";
+import Blog from "./pages/Blog";
+import Partners from "./pages/Partners";
+import PressKit from "./pages/PressKit";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +34,13 @@ const App = () => (
           <Route path="/impact" element={<Impact />} />
           <Route path="/showroom" element={<Showroom />} />
           <Route path="/get-involved" element={<GetInvolved />} />
-          <Route path="/contact" element={<NotFound />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/press-kit" element={<PressKit />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
