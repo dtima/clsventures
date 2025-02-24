@@ -1,50 +1,69 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const About = () => {
   const team = [
     {
-      name: "Sarah Johnson",
-      title: "CEO & Co-founder",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      name: "Patu Ndango Fen",
+      title: "Founder/CEO",
+      image: "/lovable-uploads/4fc69110-a3bc-4785-8807-1c2d802a4068.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
         { icon: Twitter, href: "#", label: "Twitter" },
       ],
     },
     {
-      name: "Michael Chen",
-      title: "CTO & Co-founder",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      name: "Edoa Nkodo Raphaël",
+      title: "Chief Operation Officer",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
       social: [
-        { icon: Github, href: "#", label: "GitHub" },
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
+      ],
+    },
+    {
+      name: "Andziah Martina Ayeah",
+      title: "Communication Manager",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
         { icon: Twitter, href: "#", label: "Twitter" },
       ],
     },
     {
-      name: "Emma Thompson",
-      title: "Head of Sustainability",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      name: "Maryam N. Bih",
+      title: "Production Manager",
+      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
-        { icon: Twitter, href: "#", label: "Twitter" },
       ],
     },
     {
-      name: "David Martinez",
-      title: "Operations Director",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      name: "Maimuna Mambo N.",
+      title: "Production Executive",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
-        { icon: Twitter, href: "#", label: "Twitter" },
+      ],
+    },
+    {
+      name: "Ismaila N. Ngu",
+      title: "Field Operation Coordinator",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      social: [
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="About CLS Ventures"
+        description="Learn about our mission, values, and the team behind CLS Ventures' sustainable innovation in waste management and furniture creation."
+      />
       <Navbar />
       
       {/* Hero Section */}
@@ -80,8 +99,8 @@ const About = () => {
             </div>
             <div className="relative aspect-video rounded-xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
-                alt="Our Mission"
+                src="/lovable-uploads/799ff2a5-11fa-475f-9dfb-0d23a4f7034a.png"
+                alt="Our Mission in Action"
                 className="object-cover w-full h-full"
               />
             </div>
@@ -136,7 +155,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {team.map((member) => (
               <div
                 key={member.name}

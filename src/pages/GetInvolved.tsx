@@ -189,7 +189,7 @@ const GetInvolved = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-video rounded-xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+                src="/lovable-uploads/c58a56a2-a7c0-4226-8b71-9395ba6a0ead.png"
                 alt="Community Impact"
                 className="object-cover w-full h-full"
               />
