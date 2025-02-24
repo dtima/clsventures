@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ import {
 } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { toast } from "sonner";
+import SEO from "@/components/SEO";
 
 interface Product {
   id: string;
@@ -128,19 +130,28 @@ const Products = () => {
   const handleShare = (product: Product, platform: string) => {
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(`Check out this ${product.name} from CLS Ventures!`);
+    const image = encodeURIComponent(product.image);
     
     const shareUrls = {
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
-      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}&picture=${image}&title=${text}`,
+      twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}&image=${image}`,
+      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}&image=${image}`,
     };
 
     window.open(shareUrls[platform as keyof typeof shareUrls], '_blank');
     toast.success(`Shared on ${platform}!`);
   };
 
+  // Use the first product's image as the default social sharing image
+  const defaultShareImage = products[0].image;
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Our Products"
+        description="Discover our collection of sustainable products made from recycled materials."
+        image={defaultShareImage}
+      />
       <Navbar />
       
       {/* Hero Section */}
