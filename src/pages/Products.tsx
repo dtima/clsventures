@@ -58,15 +58,6 @@ const Products = () => {
       image: "/lovable-uploads/36e1a494-dd8a-4d84-b16b-851ed339123f.png",
       category: "Furniture",
       inStock: true,
-    },
-    {
-      id: "3",
-      name: "Tire Planter Set",
-      description: "Set of three decorative planters made from recycled tires, perfect for indoor or outdoor use.",
-      price: 149.99,
-      image: "/lovable-uploads/8e215b53-abf4-43c7-b1e0-11d12b716bed.png",
-      category: "Garden",
-      inStock: true,
     }
   ];
 
