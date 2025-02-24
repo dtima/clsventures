@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Github, Linkedin, Twitter } from "lucide-react";
@@ -52,6 +51,14 @@ const About = () => {
       name: "Ismaila N. Ngu",
       title: "Field Operation Coordinator",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      social: [
+        { icon: Linkedin, href: "#", label: "LinkedIn" },
+      ],
+    },
+    {
+      name: "Mairo Mama Epse Akenji",
+      title: "Facilities Manager",
+      image: "/lovable-uploads/84f34935-927e-4f30-b64d-c5b7a42673f5.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
