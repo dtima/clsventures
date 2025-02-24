@@ -26,6 +26,17 @@ const Contact = () => {
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
+  const locations = [
+    {
+      title: "Cameroon Office",
+      address: "Mimboman château, Yaoundé, Cameroon",
+    },
+    {
+      title: "German Office",
+      address: "Primelweg 1, 73433 Aalen, Deutschland",
+    },
+  ];
+
   return (
     <>
       <SEO 
@@ -60,17 +71,15 @@ const Contact = () => {
                       <p className="text-gray-600">+1 (555) 123-4567</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-primary mt-1" />
-                    <div>
-                      <h3 className="font-medium">Office</h3>
-                      <p className="text-gray-600">
-                        123 Sustainable Way<br />
-                        Eco City, EC 12345<br />
-                        United States
-                      </p>
+                  {locations.map((location) => (
+                    <div key={location.title} className="flex items-start gap-4">
+                      <MapPin className="w-6 h-6 text-primary mt-1" />
+                      <div>
+                        <h3 className="font-medium">{location.title}</h3>
+                        <p className="text-gray-600">{location.address}</p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
