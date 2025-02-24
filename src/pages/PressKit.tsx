@@ -106,4 +106,23 @@ const PressKit = () => {
                   <div key={asset.title} className="border rounded-lg p-6">
                     <h3 className="font-semibold mb-2">{asset.title}</h3>
                     <p className="text-sm text-gray-600 mb-4">{asset.description}</p>
-                    <div className="flex items-center justify-
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">{asset.size}</span>
+                      <Button variant="outline" size="sm">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default PressKit;
