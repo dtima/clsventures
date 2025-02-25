@@ -51,7 +51,7 @@ const About = () => {
     {
       name: "Ismaila N. Ngu",
       title: "Field Operation Coordinator",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      image: "/lovable-uploads/2c2e5b5f-8e31-4911-90f7-4ca8e8055838.png",
       social: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
       ],
